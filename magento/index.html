@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Magento Cheatsheet</title>
+		<meta name="description" content="" />  		
+		<meta name="keywords" content="" />
+		<meta name="robots" content="" />
+	</head>
+	<body onload="prettyPrint()">
+        <div class="topbar" data-scrollspy="scrollspy">
+            <div class="topbar-inner">
+                <div class="container-fluid">
+                    <ul class="nav">
+                        <li><a href="#static-blocks">Static Blocks / CMS Pages</a></li>
+                        <li><a href="#template-files">Template Files</a></li>
+                        <li><a href="#layout-xml">Layout XML Files</a></li>
+                        <li><a href="#javascript">Javascript</a></li>                                           
+                    </ul>
+                </div>
+            </div>
+        </div>        
+        <!-- Main hero unit for a primary marketing message or call to action -->
+        <div class="hero-unit">
+            <div class="container">
+                <h1>Session Digital<br />Magento Frontend Hints/Tips</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="span16">
+                    
+                        <!-- ##### STATIC BLOCKS / CMS PAGES ##### -->
+                        <section id="static-blocks">
+                            <div class="row">
+                                <div class="span5">
+                                    <h2>Static Blocks / CMS Pages</h2>
+                                </div>
+                                <div class="span11">
+                                    <h3>Adding Links to pages within the site</h3>
+                                    <p><strong>{{store url=’customer-service’}}</strong></p>
+                                    <pre class="prettyprint">
+// Example
+&lt;a href=”{{store url=’customer-service’}}”&gt;Customer Service&lt;/a&gt;
+</pre>
+                                    <p><strong>{{store direct_url=’customer-service’}}</strong></p>
+                                    <pre class="prettyprint">
+// Example
+&lt;a href=”{{store direct_url=’customer-service’}}”&gt;Customer Service&lt;/a&gt;</pre>
+                                    <p><strong>{{config path="web/unsecure/base_url"}}</strong></p>
+                                    <pre class="prettyprint lang-css">
+// Example
+&lt;a href=”{{config path="web/unsecure/base_url"}}/customer-service”&gt;Customer Service&lt;/a&gt;
+
+/* Used if you are linking to a page which needs to remain unsecure (i.e. not use the SSL certificate) */</pre>
+                                    <p><strong>{{config path="web/secure/base_url"}}</strong></p>
+                                    <pre class="prettyprint lang-css">
+// Example
+&lt;a href=”{{config path="web/secure/base_url"}}/checkout”&gt;Checkout&lt;/a&gt;
+
+/* Used if you are linking to a page which needs to remain secure (i.e. makes use of the SSL certificate) */</pre>
+                                    
+                                    <h3>Adding images to static blocks / CMS pages</h3>
+                                    <p><strong>{{skin url='images/image01.jpg'}}</strong></p>
+                                    <pre class="prettyprint lang-css">
+// Example
+&lt;img src=”{{skin url='images/image01.jpg'}}” alt=”image” /&gt;</pre>
+                                    
+                                    <h3>Adding a widget to a static block</h3>
+                                    <p><strong>{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="18"}}</strong></p>
+                                    <pre class="prettyprint lang-css">
+// Example
+{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="18"}}</pre>
+                                    
+                                    <h3>Adding a static block within a static block or within a CMS page</h3>
+                                    <p><strong>{{block type="cms/block" block_id="your_block_identifier" template="cms/content.phtml"}}</strong></p>
+                                    <pre class="prettyprint lang-css">
+// Example
+{{block type="cms/block" block_id="your_block_identifier" template="cms/content.phtml"}}</pre>
+                                    
+                                    <h3>Additional Resources</h3>
+                                    <ul>
+                                        <li><a href="http://www.magentocommerce.com/wiki/3_-_store_setup_and_management/cms/markup_tags">Magento Wiki - Markup Tags</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- ##### TEMPLATE FILES (.phtml) ##### -->
+                        <section id="template-files">
+                            <div class="row">
+                                <div class="span5">
+                                    <h2>Template Files (.phtml)</h2>
+                                </div>
+                                <div class="span11">
+                                    <h3>Adding translatable text to a page</h3>
+                                    <p><strong>&lt;?php echo $this->__('') ?&gt;</strong></p>
+                                    <pre class="prettyprint">
+//Example
+&lt;p&gt;&lt;?php echo $this->__('Your text here') ?&gt;&lt;/p&gt;</pre>
+                                    
+                                    <h3>Adding Links to pages within the site</h3>
+                                    <p><strong>&lt;?php echo $this->getUrl('') ?&gt;</strong></p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;a href=”&lt;?php echo $this->getUrl('customer-service') ?&gt;”&gt;Customer Service&lt;/a&gt;
+</pre>
+                                    <p><strong>&lt;?php $this->getUrl('', array('_secure' => false)) ?&gt;</strong><p>
+
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;a href=”&lt;?php $this->getUrl('customer-service', array('_secure' => false)) ?&gt;”&gt;Customer Service&lt;/a&gt;
+
+/* Used for linking to unsecure pages */
+</pre>
+                                    <h3>Adding images / js to template files</h3>
+                                    <p><strong>&lt;?php echo $this->getSkinUrl(''); ?&gt;</strong></p>
+                                    <pre class="prettyprint lang-css">
+//Example                                    
+&lt;img src=”&lt;?php echo $this->getSkinUrl('images/image01.jpg'); ?&gt;” alt=”image” /&gt;</pre>
+                                    
+                                    <h3>Adding content blocks to a page</h3>
+                                    <p><strong>&lt;?php echo $this->getChildHtml(‘name of block’) ?&gt;</strong></p>
+                                    
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;?php echo $this->getChildHtml(‘name of block’) ?&gt;
+
+/* For blocks which are a child of the parent block you can use the following code to display it to the frontend replacing ‘name of block’ with the appropriate name.*/</pre>
+                                    <h3>Adding a static block to a template</h3>
+                                    <p><strong>&lt;?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('')->toHtml() ?&gt;</strong></p>                                  
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contactpage')->toHtml() ?&gt;
+
+/* The code allows you to add a static block to a template file, setting the block through changing the setBlockId('contactpage') value. */</pre>                                    
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- ##### LAYOUT XML FILES (.xml) ##### -->
+                        <section id="layout-xml">
+                            <div class="row">
+                                <div class="span5">
+                                    <h2>Layout XML Files (.xml)</h2>
+                                </div>
+                                <div class="span11">
+                                    <h3>Adding CSS through the XML layout files</h3>
+                                    <p>Adding stylesheets located in the skin folder can be done using the following code changing the <code>&lt;stylesheet&gt;</code> value and placing the <code>&lt;action method="addCss"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;action method="addCss"&gt;&lt;stylesheet&gt;css/styles.css&lt;/stylesheet&gt;&lt;/action&gt;</pre>
+                                    
+                                    <h3>Adding skin js files through XML layout files</h3>
+                                    <p>If you need to add a new javascript file from the js folder located in the theme, use the code below changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;action method="addItem"&gt;
+    &lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
+&lt;/action&gt;</pre>
+                                    <h3>Adding js files from the core js folder</h3>
+                                    <p>if you need to add a js file from the core js folder, you can use the code below changing the value within <code>&lt;script&gt;</code> and placing the <code>&lt;action method="addJs"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;action method="addJs"&gt;&lt;script&gt;script/scripts.js&lt;/script&gt;&lt;/action&gt;</pre>
+                                    
+                                    <h3>Removing skin js files through XML layouts</h3>
+                                    <p>If you need to remove a javascript file from only certain pages, use the following code changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;reference name="head"&gt;
+	&lt;action method="removeItem"&gt;
+		&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
+	&lt;/action&gt;
+&lt;/reference&gt;</pre>
+                                    <h3>Changing the page layout</h3>
+                                    <p>By default Magento comes with five different page layouts, one column, two column left, two column right, three column and empty. The code below shows an example of setting the page template to the two column left layout.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;reference name="root"&gt;
+    &lt;action method="setTemplate"&gt;&lt;template>page/2columns-left.phtml&lt;/template&gt;&lt;/action&gt;
+&lt;/reference&gt;</pre>
+                                    <h3>Adding a static block to a page through layout XML</h3>
+                                    <p>If you want to add a static block through the layout XML, use the code below changing the <code>name="static-block"</code> and <code>&lt;block_id&gt;static-block&lt;/block_id&gt;</code> to the id of the static block you wish to include.</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;block type="cms/block" name="static-block"&gt;
+    &lt;action method="setBlockId"&gt;&lt;block_id>static-block&lt;/block_id&lt;&gt;/action&gt;
+&lt;/block&gt;</pre>
+                                    <h3>Changing the number of products displayed per row on a category page</h3>
+                                    <p>Add the following line of code to the catalog.xml inside of:</p>
+                                    <pre class="prettyprint lang-css">
+//Example
+&lt;block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml"&gt;&lt;/block&gt;
+    &lt;action method="setColumnCount"&gt;&lt;columns>4&lt;/columns&gt;&lt;/action&gt;</pre>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- ##### JAVASCRIPT ##### -->
+                        <section id="javascript">
+                            <div class="row">
+                                <div class="span5">
+                                    <h2>Javascript</h2>                                
+                                </div>
+                                <div class="span11">
+                                    <h3>Script to run Prototype after document load</h3>
+                                    <pre class="prettyprint lang-css">
+Event.observe(window, 'load', function() {
+
+});</pre>
+                                    <h3>Running jQuery within the Prototype on document load</h3>
+                                    <pre class="prettyprint lang-css">
+Event.observe(window, 'load', function() {
+    (function($){
+    
+    })(jQuery);
+});</pre>
+                                    <h3>Built-in Magento javascript</h3>
+                                    <p>Magento has some built in javascript which you can make use of instead of including new libraries. The decorate functions are very useful when you need to style alternate, first or last items in tables or lists. The decorate function add classes to elements, allowing you to style arrays of dynamically generated content.</p>
+                                    <p>For use with tables, you will need to change <code>shopping-cart-table</code> to the id of the table you with to decorate.</p>
+                                    <pre class="prettyprint lang-css">
+&lt;script type="text/javascript"&gt;decorateTable('shopping-cart-table')&lt;/script&gt;</pre>
+                                    <p>For use with lists, you will need to change <code>mini-products-list</code> to the id of the list you wish to decorate.</p>
+                                    <pre class="prettyprint lang-css">
+&lt;script type="text/javascript"&gt;decorateList('mini-products-list', 'none-recursive')&lt;/script&gt;</pre>
+                                    <p>Generic function which will add classes to an array of elements specified. Change <code>ul.products-grid</code> to the class of the element you wish to decorate</p>
+                                    <pre class="prettyprint lang-css">
+&lt;script type="text/javascript"&gt;decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])&lt;/script&gt;</pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>        
+                <footer>
+                    <p>Created by: <a href="mailto:edward@sessiondigital.com">Edward Chen</a></p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
