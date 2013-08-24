@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 100%;
+}
+body {
+    font-size: 1em;
+}
+
+/* Layout */
+.container {
+    margin-top: $nav_height;
+    @include respond-to(900) {
+        margin-top: 0;
+    }
+}
+/* Content sections */
+.static_blocks {
+    background-color: rgba(244,123,32,0.3);
+}
+.template_files {
+    background-color: rgba(220,127,56,0.3);
+}
+.layout_xml {
+    background-color: rgba(196,130,79,0.3);
+}
+.javascript {
+    background-color: rgba(173,133,103,0.3);
+}
+.section_content {
+    padding: em(15);
+    @include respond-to(900) {
+        max-width: em(800);
+        margin-left: $nav_width + 3.75em;
+    }
+}

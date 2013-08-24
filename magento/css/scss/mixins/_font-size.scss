@@ -1,0 +1,6 @@
+$base-font-size: 16; //default browser font size is 16px
+
+@mixin font-size($sizeValue) {
+	font-size: ($sizeValue) + px;
+	font-size: ($sizeValue / $base-font-size) + rem;
+}

@@ -1,0 +1,33 @@
+.nav_container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: em(15);
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    @include respond-to(900){
+        top: em(30);
+        left: em(30);
+        width: $nav_width;
+        .nav_toggle {
+            display: none;
+        }
+        .nav {
+            display: block !important;
+        }
+    }
+}
+.nav_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav_link a {
+    display: block;
+    width: 100%;
+    padding: em(10);
+}

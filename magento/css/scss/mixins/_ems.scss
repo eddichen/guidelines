@@ -1,0 +1,12 @@
+/* EMs
+* Converts pixels to ems.
+*
+* Usage: @include em(pixel value, default font size) - default font size is optional
+* uses predefine base font size if undefined.
+*****************************/
+
+$body-font-size: 16;
+
+@function em($pixels, $context: $body-font-size) {
+  @return #{$pixels/$context}em
+}
