@@ -6,6 +6,7 @@ html {
 }
 body {
     font-size: 1em;
+    line-height: 1.5;
 }
 
 /* Layout */
@@ -34,4 +35,9 @@ body {
         max-width: em(800);
         margin-left: $nav_width + 3.75em;
     }
+}
+
+/* */
+.code_comment {
+    margin-bottom: 2.5em;
 }
