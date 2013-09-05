@@ -1,3 +1,6 @@
+nav {
+    font-family: 'PT Sans', sans-serif;
+}
 .nav_container {
     position: fixed;
     top: 0;
@@ -13,11 +16,26 @@
         top: em(30);
         left: em(30);
         width: $nav_width;
+        background-color: transparent;
+        padding: em(12) 0;
         .nav_toggle {
             display: none;
         }
         .nav {
             display: block !important;
+        }
+        .nav_link {
+            border-bottom: 1px solid #000;
+            &:first-child {
+                border-top: 1px solid #000;
+            }
+        }
+        a {
+            color: #000;
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
         }
     }
 }
