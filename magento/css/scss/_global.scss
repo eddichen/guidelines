@@ -16,6 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 nav {
     font-family: 'PT Sans', sans-serif;
 }
+section pre.code {
+    padding: em(20);
+}
 
 /* Layout */
 .container {
@@ -40,7 +43,7 @@ nav {
 .section_content {
     padding: em(15);
     @include respond-to(900) {
-        max-width: em(800);
+        max-width: em(700);
         margin-left: $nav_width + 3.75em;
     }
 }
