@@ -196,7 +196,7 @@
 <pre class="prettyprint code">
 //Example
 &lt;action method="addItem"&gt;
-&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
+    &lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
 &lt;/action&gt;
 </pre>
                         <p class="code_comment">If you need to add a new javascript file from the js folder located in the theme, use the code below changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
@@ -212,9 +212,9 @@
 <pre class="prettyprint code">
 //Example
 &lt;reference name="head"&gt;
-&lt;action method="removeItem"&gt;
-&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
-&lt;/action&gt;
+    &lt;action method="removeItem"&gt;
+         &lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
+    &lt;/action&gt;
 &lt;/reference&gt;
 </pre>
                         <p class="code_comment">If you need to remove a javascript file from only certain pages, use the following code changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
@@ -223,7 +223,7 @@
 <pre class="prettyprint code">
 //Example
 &lt;reference name="root"&gt;
-&lt;action method="setTemplate"&gt;&lt;template>page/2columns-left.phtml&lt;/template&gt;&lt;/action&gt;
+    &lt;action method="setTemplate"&gt;&lt;template>page/2columns-left.phtml&lt;/template&gt;&lt;/action&gt;
 &lt;/reference&gt;
 </pre>
                         <p class="code_comment">By default Magento comes with five different page layouts, one column, two column left, two column right, three column and empty. The code below shows an example of setting the page template to the two column left layout.</p>
@@ -232,7 +232,7 @@
 <pre class="prettyprint code">
 //Example
 &lt;reference name="root"&gt;
-&lt;action method="addBodyClass"&gt;&lt;className&gt;customer&lt;/className&gt;&lt;/action&gt;
+    &lt;action method="addBodyClass"&gt;&lt;className&gt;customer&lt;/className&gt;&lt;/action&gt;
 &lt;/reference&gt;
 </pre>                  
                         <p class="code_comment">This snippet of XML will add a class to the body tag of the page. Make sure the line of code is added within the reference name root and that the page template you're using (template/page/...) has &lt;body&lt;?php echo $this-getBodyClass()?' class="'.$this-&gt;getBodyClass().'"':'' ?&gt;&gt;</p>  
@@ -240,7 +240,7 @@
 <pre class="prettyprint code">
 //Example
 &lt;block type="cms/block" name="static-block"&gt;
-&lt;action method="setBlockId"&gt;&lt;block_id>static-block&lt;/block_id&lt;&gt;/action&gt;
+    &lt;action method="setBlockId"&gt;&lt;block_id>static-block&lt;/block_id&lt;&gt;/action&gt;
 &lt;/block&gt;
 </pre>
                         <p class="code_comment">If you want to add a static block through the layout XML, use the code below changing the <code>name="static-block"</code> and <code>&lt;block_id&gt;static-block&lt;/block_id&gt;</code> to the id of the static block you wish to include.</p>
