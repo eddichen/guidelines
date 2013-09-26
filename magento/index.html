@@ -228,6 +228,14 @@
 </pre>
                         <p class="code_comment">By default Magento comes with five different page layouts, one column, two column left, two column right, three column and empty. The code below shows an example of setting the page template to the two column left layout.</p>
                         
+                        <h2>Adding a class to the &lt;body&gt;</h2>
+<pre class="prettyprint code">
+//Example
+&lt;reference name="root"&gt;
+&lt;action method="addBodyClass"&gt;&lt;className&gt;customer&lt;/className&gt;&lt;/action&gt;
+&lt;/reference&gt;
+</pre>                  
+                        <p class="code_comment">This snippet of XML will add a class to the body tag of the page. Make sure the line of code is added within the reference name root and that the page template you're using (template/page/...) has &lt;body&lt;?php echo $this-getBodyClass()?' class="'.$this-&gt;getBodyClass().'"':'' ?&gt;&gt;</p>  
                         <h2>Adding a static block to a page through layout XML</h2>
 <pre class="prettyprint code">
 //Example
