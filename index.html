@@ -6,109 +6,88 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="robots" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="css/styles.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-        <div class="topbar">
-            <div class="topbar-inner">
-                <div class="container-fluid">
-                    <ul class="nav">
-                        <li><a href="#general-practices">General Practices</a></li>
-                        <li><a href="#html">HTML</a></li>
-                        <li><a href="#css">CSS</a></li>
-                        <li><a href="#css3">CSS3</a></li>
-                        <li><a href="#fonts">Fonts</a></li>
-                        <li><a href="#images">Images</a></li>
-                        <li><a href="#javascript">Javascript</a></li>
-                        <li><a href="#jquery">jQuery</a></li>
-                        <li><a href="#accessibility">Accessibility</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit">
-            <div class="container">
-                <h1>Session Digital<br />Frontend Development Guidelines</h1>
-                <p>The aim of this guide is standardise frontend coding practices and styles across all current and future projects, provide a reference as well as allowing develops to easily move between projects.</p>
-            </div>
-        </div>
         <div class="container">
+            <div class="nav_container">
+        	    <a href="#nav" class="nav_toggle" id="nav_toggle"><span>Menu</span></a>
+        	    <nav class="nav" style="display:none;">
+                    <ul class="nav_list">
+                        <li class="nav_link"><a href="#general-practices">General Practices</a></li>
+                        <li class="nav_link"><a href="#html">HTML</a></li>
+                        <li class="nav_link"><a href="#css">CSS</a></li>
+                        <li class="nav_link"><a href="#css3">CSS3</a></li>
+                        <li class="nav_link"><a href="#fonts">Fonts</a></li>
+                        <li class="nav_link"><a href="#images">Images</a></li>
+                        <li class="nav_link"><a href="#javascript">Javascript</a></li>
+                        <li class="nav_link"><a href="#jquery">jQuery</a></li>
+                        <li class="nav_link"><a href="#accessibility">Accessibility</a></li>                                        
+                    </ul>
+        	    </nav>
+            </div>
             <div class="content">
-                <div class="row">
-                    <div class="span16">
-
-                        <!-- ##### GENERAL PRACTICES ##### -->
-                        <section id="general-practices">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>General Practices</h2>
-                                </div>
-                                <div class="span11">
-                                    <h3>Indentation</h3>
-                                    <p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting <i>Tab</i> in your text editor shall be equivalent to <b>four spaces</b>.</p>
-                                    <h3>Readability vs Compression</h3>
-                                    <p>We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.</p>
-                                    <p>We will use server-side or build processes to automatically minify and gzip all static client-side files, such as CSS and JavaScript.</p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- ##### HTML ##### -->
-                        <section id="html">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>HTML</h2>
-                                </div>
-                                <div class="span11">
-                                    <h3>DOCTYPE (Document type declaration)</h3>
-                                    <p>The line of code which appears at the very top of any HTML document. Essential for the proper rendering of documents in browsers and with the advent of HTML5 the doctype can be declared as simply</p>
-                                    <pre class="prettyprint">&lt;!DOCTYPE html&gt;</pre>
-                                    <p>Although this is not a standard yet, we recommend using this DOCTYPE as it’s supported in all browsers and throws IE6 & IE7 into standards mode.</p>
-                                    <h4>More reading</h4>
-                                    <ul>
-                                        <li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended Doctype Declarations to use in your Web document</a></li>
-                                        <li><a href="http://www.alistapart.com/articles/doctype/">Fix your site with the correct DOCTYPE!</a></li>
-                                        <li><a href="http://ejohn.org/blog/html5-doctype/">HTML5 DOCTYPE</a></li>
-                                    </ul>
-
-                                    <h3>Write Clean and Semantic Markup</h3>
-                                    <p>The following guidelines are for writing and structuring your HTML. We recommend using HTML tags for their intended purpose and structuring using indentation and whitespace where appropriate. <strong>This is the simplest form of SEO.</strong></p>
-                                    <p>Although HTML5 accepts various forms of structuring HTML tags, please use XHTML 1.0 standards of writing all tags in lowercase, all attributes must be quoted and all elements must have a closing tag unless they are self-closing (e.g. <code class="prettyprint">&lt;img /&gt;</code>).</p>
-                                    <ul>
-                                        <li>Using <code class="prettyprint">&lt;p&gt;</code> for paragraphs of text</li>
-                                        <li>Heading tags such as <code class="prettyprint">&lt;h1&gt;</code> for for titles</li>
-                                        <li>List items structured using <code class="prettyprint">&lt;li&gt;, &lt;ol&gt;, &lt;dl&gt;</code></li>
-                                        <li>Tables are to be only used for tabular data</li>
-                                        <li>Make use of <code class="prettyprint">&lt;thead&gt;, &lt;th&gt;, &lt;tbody&gt;</code> tags when defining tables</li>
-                                        <li>Use <a href="http://www.sitepoint.com/microformats-meaning-markup/">microformats</a> where appropriate</li>
-                                        <li>use commenting <code class="prettyprint">&lt;!-- --&gt;</code> to break up sections and better describe your code to someone viewing your code for the first time</li>
-                                        <li>add descriptions to images using the <code class="prettyprint">alt=""</code> attribute</li>
-                                        <li>avoid inline styles like the plague</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- ##### CSS ##### -->
-                        <section id="css">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>CSS</h2>
-                                </div>
-                                <div class="span11">
-                                    <p>Although everyone has their own personal style in coding CSS stylesheets, the following guidelines are based on the collective best practices for coding CSS amongst frontend and backend developers.</p>
-                                    <h3>General coding practices</h3>
-                                    <ul>
-                                        <li>include styling through external stylesheets and add to the head of the document using the <code class="prettyprint">&lt;link&gt;</code> tag</li>
-                                        <li>use a reset css stylesheet to standardise cross browser behaviour as much as possible (<a href="http://necolas.github.com/normalize.css/">normalize</a>), included already in the HTML5 Boilerplate</li>
-                                        <li>Use classes instead of id’s unless you’re targeting a single item in the document (e.g. #header, #footer, #sidebar)</li>
-                                        <li>Write <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">efficient CSS</a></li>
-                                        <li>Always end property values with a semi-colon, even if it’s the only one</li>
-                                        <li>comment your code, not only to describe what’s happening, but also to explain browser specific fixes.</li>
-                                    </ul>
-                                    <h3>Whitespace and structure</h3>
-                                    <p>CSS selectors should be written on a single line and properties on separate lines and indented as shown below:</p>
-                                    <pre class="prettyprint lang-css">
+                <section id="general_practices" class="section general_practices">
+                    <!-- ##### GENERAL PRACTICES ##### -->
+                    <div class="section_content">
+                        <h1>General Practices</h1>
+                        <h2>Indentation</h2>
+                        <p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting <i>Tab</i> in your text editor shall be equivalent to <b>four spaces</b>.</p>
+                        <h3>Readability vs Compression</h3>
+                        <p>We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.</p>
+                        <p>We will use server-side or build processes to automatically minify and gzip all static client-side files, such as CSS and JavaScript.</p>
+                    </div>
+                </section>
+                <!-- ##### HTML ##### -->
+                <section id="html" class="section html">
+                    <div class="section_content">
+                        <h1>HTML</h1>
+                        <h2>DOCTYPE (Document type declaration)</h2>
+                        <p>The line of code which appears at the very top of any HTML document. Essential for the proper rendering of documents in browsers and with the advent of HTML5 the doctype can be declared as simply</p>
+                        <pre class="prettyprint code">&lt;!DOCTYPE html&gt;</pre>
+                        <p>Although this is not a standard yet, we recommend using this DOCTYPE as it’s supported in all browsers and throws IE6 & IE7 into standards mode.</p>
+                        <h4>More reading</h4>
+                        <ul>
+                            <li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended Doctype Declarations to use in your Web document</a></li>
+                            <li><a href="http://www.alistapart.com/articles/doctype/">Fix your site with the correct DOCTYPE!</a></li>
+                            <li><a href="http://ejohn.org/blog/html5-doctype/">HTML5 DOCTYPE</a></li>
+                        </ul>
+    
+                        <h3>Write Clean and Semantic Markup</h3>
+                        <p>The following guidelines are for writing and structuring your HTML. We recommend using HTML tags for their intended purpose and structuring using indentation and whitespace where appropriate. <strong>This is the simplest form of SEO.</strong></p>
+                        <p>Although HTML5 accepts various forms of structuring HTML tags, please use XHTML 1.0 standards of writing all tags in lowercase, all attributes must be quoted and all elements must have a closing tag unless they are self-closing (e.g. <code class="prettyprint code">&lt;img /&gt;</code>).</p>
+                        <ul>
+                            <li>Using <code class="prettyprint code">&lt;p&gt;</code> for paragraphs of text</li>
+                            <li>Heading tags such as <code class="prettyprint code">&lt;h1&gt;</code> for for titles</li>
+                            <li>List items structured using <code class="prettyprint code">&lt;li&gt;, &lt;ol&gt;, &lt;dl&gt;</code></li>
+                            <li>Tables are to be only used for tabular data</li>
+                            <li>Make use of <code class="prettyprint code">&lt;thead&gt;, &lt;th&gt;, &lt;tbody&gt;</code> tags when defining tables</li>
+                            <li>Use <a href="http://www.sitepoint.com/microformats-meaning-markup/">microformats</a> where appropriate</li>
+                            <li>use commenting <code class="prettyprint code">&lt;!-- --&gt;</code> to break up sections and better describe your code to someone viewing your code for the first time</li>
+                            <li>add descriptions to images using the <code class="prettyprint code">alt=""</code> attribute</li>
+                            <li>avoid inline styles like the plague</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- ##### CSS ##### -->
+                <section id="css" class="section css">
+                    <div class="section_content">
+                        <h1>CSS</h1>
+                        <p>Although everyone has their own personal style in coding CSS stylesheets, the following guidelines are based on the collective best practices for coding CSS amongst frontend and backend developers.</p>
+                        <h2>General coding practices</h2>
+                        <ul>
+                            <li>include styling through external stylesheets and add to the head of the document using the <code class="prettyprint code">&lt;link&gt;</code> tag</li>
+                            <li>use a reset css stylesheet to standardise cross browser behaviour as much as possible (<a href="http://necolas.github.com/normalize.css/">normalize</a>), included already in the HTML5 Boilerplate</li>
+                            <li>Use classes instead of id’s unless you’re targeting a single item in the document (e.g. #header, #footer, #sidebar)</li>
+                            <li>Write <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">efficient CSS</a></li>
+                            <li>Always end property values with a semi-colon, even if it’s the only one</li>
+                            <li>comment your code, not only to describe what’s happening, but also to explain browser specific fixes.</li>
+                        </ul>
+                        <h2>Whitespace and structure</h2>
+                        <p>CSS selectors should be written on a single line and properties on separate lines and indented as shown below:</p>
+                        <pre class="prettyprint code">
 /* PREFERABLY NOT LIKE THIS */
 article,
 aside,
@@ -132,9 +111,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     display: block;
     padding: 10px 0 0;
 }</pre>
-                                    <h3>Spacing</h3>
-                                    <p>When spacing CSS properties, space for readability rather than for file size savings. There shouldn’t be a space between the property and the colon (:), a space should exist between the colon and the value and no space between the property value and the semi-colon.</p>
-                                    <pre>
+                        <h2>Spacing</h2>
+                        <p>When spacing CSS properties, space for readability rather than for file size savings. There shouldn’t be a space between the property and the colon (:), a space should exist between the colon and the value and no space between the property value and the semi-colon.</p>
+                        <pre class="prettyprint code">
 /* NOT LIKE THIS */
 padding :0 10px 5px 5px ;
 
@@ -143,11 +122,11 @@ padding:0 10px 5px 5px;
 
 /* LIKE THIS */
 padding: 0 10px 5px 5px;</pre>
-                                    <p>If you are modifying an existing stylesheet which doesn’t conform to this structure, use a web app such as <a href="http://procssor.com/">ProCSSor</a> to pre-format the stylesheet.</p>
-                                    <h3>Naming Conventions for Selectors</h3>
-                                    <p>It is always preferable to name something, be it an ID or a class, by the nature of <b>what it is</b> rather than by <b>what it looks like</b>. For instance, a class name of <code>big-blue-text</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>note-text</code> is better because when the visual style changes it still makes sense.</p>
-                                    <p>When defining selectors, if the class or id you have named consists of more than one word, separate the words using hyphens rather than using underscore or camel case.</p>
-                                    <pre class="prettyprint">
+                        <p>If you are modifying an existing stylesheet which doesn’t conform to this structure, use a web app such as <a href="http://procssor.com/">ProCSSor</a> to pre-format the stylesheet.</p>
+                        <h2>Naming Conventions for Selectors</h2>
+                        <p>It is always preferable to name something, be it an ID or a class, by the nature of <b>what it is</b> rather than by <b>what it looks like</b>. For instance, a class name of <code class="code">big-blue-text</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>note-text</code> is better because when the visual style changes it still makes sense.</p>
+                        <p>When defining selectors, if the class or id you have named consists of more than one word, separate the words using hyphens rather than using underscore or camel case.</p>
+                        <pre class="prettyprint code">
 /* NOT LIKE THIS */
 note_text
 
@@ -156,11 +135,11 @@ noteText
 
 /* LIKE THIS */
 note-text</pre>
-
-                                    <h3>CSS Shorthand</h3>
-                                    <p>In general, CSS shorthand is preferred because of it’s compactness (saves characters) and the ability to later go back and add in values that are already present, such as the case with margin and padding.</p>
-                                    <p>Developers should be aware of the TRBL acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If bottom is undefined, it inherits its value from top. Likewise, if left is undefined, it inherits its value from right. If only the top value is defined, all sides inherit from that one declaration.</p>
-                                    <pre class="prettyprint">
+    
+                        <h2>CSS Shorthand</h2>
+                        <p>In general, CSS shorthand is preferred because of it’s compactness (saves characters) and the ability to later go back and add in values that are already present, such as the case with margin and padding.</p>
+                        <p>Developers should be aware of the TRBL acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If bottom is undefined, it inherits its value from top. Likewise, if left is undefined, it inherits its value from right. If only the top value is defined, all sides inherit from that one declaration.</p>
+                        <pre class="prettyprint code">
 /* NOT LIKE THIS */
 padding-top: 0px ;
 padding-right: 10px;
@@ -172,158 +151,138 @@ padding: 0px 10px 0px 10px;
 
 /* BEST */
 padding: 0 10px;</pre>
-                                    <p>Also if a value of a property is 0, there’s no point adding px, em, % values as they are all the same.</p>
-
-                                    <h3>No !important</h3>
-                                    <p>The use of !important automatically brings the property to the top of the hierarchy, overwriting even more specifically written selectors. It’s use should be avoided at all costs, rather a better understanding of CSS selector precedence, and how to better target elements is preferred.</p>
-
-                                    <h3>Styling for Internet Explorer &lt; 9</h3>
-                                    <p>When styling for &lt; IE9 or a specific version of IE, it's recommended not to use hacks in CSS to apply fixes. You can add conditional statements to the body tag, such as:</p>
-                                    <pre class="prettyprint">
+                        <p>Also if a value of a property is 0, there’s no point adding px, em, % values as they are all the same.</p>
+    
+                        <h2>No !important</h2>
+                        <p>The use of !important automatically brings the property to the top of the hierarchy, overwriting even more specifically written selectors. It’s use should be avoided at all costs, rather a better understanding of CSS selector precedence, and how to better target elements is preferred.</p>
+    
+                        <h2>Styling for Internet Explorer &lt; 9</h2>
+                        <p>When styling for &lt; IE9 or a specific version of IE, it's recommended not to use hacks in CSS to apply fixes. You can add conditional statements to the body tag, such as:</p>
+                        <pre class="prettyprint code">
 &lt;!--[if lt IE 7 ]&gt; &lt;body class="ie6"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 7 ]&gt;	&lt;body class="ie7"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 8 ]&gt;	&lt;body class="ie8"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 9 ]&gt;	&lt;body class="ie9"&gt; &lt;![endif]--&gt;
 &lt;!--[if !IE]&gt;&lt;!--&gt; &lt;body&gt; &lt;!--&lt;![endif]--&gt;</pre>
                         <p>Or through tools such as the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> which adds a class to the html tag depending on what browser the document is viewed in.</p>
-                        <pre class="prettyprint">
+                        <pre class="prettyprint code">
 &lt;!--[if lt IE 7]&gt; &lt;html class="no-js ie ie6" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 7]&gt; &lt;html class="no-js ie ie7" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 8]&gt; &lt;html class="no-js ie8" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 9]&gt; &lt;html class="no-js ie9" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if gt IE 9]&gt;&lt;!--><html class="no-js" lang="en">&lt;!--&lt;![endif]--&gt;</pre>
-                                    <p><span class="label important">Important</span> When targeting IE or specific versions of IE, always comment with a description of the issue so other developers can understand the problem the styling is trying to fix.</p>
-                                    <pre class="prettyprint">
+                        <p><span class="label important">Important</span> When targeting IE or specific versions of IE, always comment with a description of the issue so other developers can understand the problem the styling is trying to fix.</p>
+                        <pre class="prettyprint code">
 .no-borderradius .collateral-tabs .tab span { /* border-radius for IE */
-	behavior: url(/skin/frontend/dreams/default/js/PIE.php);
+    behavior: url(/skin/frontend/dreams/default/js/PIE.php);
 }</pre>
-                                    <h4>Tools</h4>
-                                    <p><a href="http://instacss.com/">InstaCSS</a> - Find out about CSS properties, instantly</p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- ##### CSS3 ##### -->
-                        <section id="css3">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>CSS3</h2>
-                                </div>
-                                <div class="span11">
-                                    <p>Where appropriate, it is recommended to apply CSS3 styling to take advantage of styling available in modern browsers and future proofing the website. Fallbacks will need to be included to support browsers which don’t support CSS3 properties, not necessarily to exactly replicate the same styling, but at a minimum provide the same functionality.</p>
-                                    <p>Below is an example of declaring the background property twice so browsers which don’t support RGBA values use the image background.</p>
-                                    <pre class="prettyprint">
+                        <h3>Tools</h3>
+                        <p><a href="http://instacss.com/">InstaCSS</a> - Find out about CSS properties, instantly</p>
+                    </div>
+                </section>
+                <!-- ##### CSS3 ##### -->
+                <section id="css3" class="section css3">
+                    <div class="section_content">
+                        <h1>CSS3</h1>
+                        <p>Where appropriate, it is recommended to apply CSS3 styling to take advantage of styling available in modern browsers and future proofing the website. Fallbacks will need to be included to support browsers which don’t support CSS3 properties, not necessarily to exactly replicate the same styling, but at a minimum provide the same functionality.</p>
+                        <p>Below is an example of declaring the background property twice so browsers which don’t support RGBA values use the image background.</p>
+                        <pre class="prettyprint code">
 /* Background image fallback for browsers which don’t support RGBA */
 background: url(../images/background.png);
 background: rgba(0,0,0,0.5);</pre>
-                                    <p><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> provides feature sniffing classes, allowing you to target browsers which don’t support specific CSS3 properties and apply alternative styling.</p>
-                                    <h3>Vendor prefixes</h3>
-                                    <p>Some CSS3 properties are not fully supported by browsers and require vendor prefixes (-moz-, -webkit-) to the property. The recommended structure is to add the vendor prefixes first followed by the actual CSS3 property.</p>
-                                    <pre class="prettyprint">
+                        <p><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> provides feature sniffing classes, allowing you to target browsers which don’t support specific CSS3 properties and apply alternative styling.</p>
+                        <h2>Vendor prefixes</h2>
+                        <p>Some CSS3 properties are not fully supported by browsers and require vendor prefixes (-moz-, -webkit-) to the property. The recommended structure is to add the vendor prefixes first followed by the actual CSS3 property.</p>
+                        <pre class="prettyprint code">
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 border-radius: 10px;</pre>
-                                    <h4>Tools</h4>
-                                    <ul>
-                                        <li><a href="http://css3generator.com/">CSS3 Generator</a> - quickly generate CSS3 including vendor prefixes using this web app.</li>
-                                        <li><a href="http://layerstyles.org/">Layer Styles</a> - providing a similar interface to Photoshop to generate CSS3 styles</li>
-                                        <li><a href="http://leaverou.github.com/prefixfree/">-prefix-free</a> - a javascript plugin which adds the browser prefix only when required, allowing you to specify the property without prefixes.</li>
-                                        <li><a href="http://css3pie.com/">CSS3 PIE</a> - allows IE6-9 the capability of rendering several CSS3 properties.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
+                        <h3>Tools</h3>
+                        <ul>
+                            <li><a href="http://css3generator.com/">CSS3 Generator</a> - quickly generate CSS3 including vendor prefixes using this web app.</li>
+                            <li><a href="http://layerstyles.org/">Layer Styles</a> - providing a similar interface to Photoshop to generate CSS3 styles</li>
+                            <li><a href="http://leaverou.github.com/prefixfree/">-prefix-free</a> - a javascript plugin which adds the browser prefix only when required, allowing you to specify the property without prefixes.</li>
+                            <li><a href="http://css3pie.com/">CSS3 PIE</a> - allows IE6-9 the capability of rendering several CSS3 properties.</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- ##### FONTS ##### -->
+                <section id="fonts" class="section fonts">
+                    <div class="section_content">
+                        <h1>Fonts</h1>
+                        <p>More often than not, a custom font (non web-safe font) is required on the site you’re building. Before implementing the custom font, carefully choose a font stack which includes web-safe fonts just in case the custom font doesn’t appear for the customer.</p>
+                        <p>For applying custom fonts to the site, we recommend the use of @font-face which has a wide browser support including Internet Explorer since IE5. The advantages of @font-face is that the font is downloaded by the user without the requirement of flash, javascript or php to render the font. There is a differentiation in appearance between browsers, but this is due to the font rendering of different browsers/OS. Make use you have a properly licenced font before using tools such as <a href="http://www.fontsquirrel.com/fontface/generator">Font Squirel</a> to convert your fonts. Other systems which may be an alternative to @font-face inlcude:</p>
+                        <ul>
+                            <li><a href="https://typekit.com/">Typekit</a></li>
+                            <li><a href="http://www.google.com/webfonts">Google Webfonts</a></li>
+                            <li><a href="http://fontdeck.com/">fontdeck</a></li>
+                        </ul>
+                        <p>Other tried but not recommended font solutions include:</p>
+                        <ul>
+                            <li><a href="http://www.mikeindustries.com/blog/sifr">sIFR</a> - which was one of the original font replacement systems, uses Flash and Javascript to render customs fonts in the browser. With some devices not supporting Flash it won’t work, it renders on page load and text won’t appear until it loads.</li>
+                            <li><a href="http://cufon.shoqolate.com/generate/">cufon</a> - a slightly better system as it uses JS to render fonts, but the text is unselectable and even on their website, they recommend that you use typekit</li>
+                        </ul>
+                        <h3>Font sizing</h3>
+                        <p>We recommend using px values for font sizing, at the very least assigning the base font as a pixel value. This is to ensure control and consistency of font sizing across browsers. Ems were recommended due to IE6 not being able to resize px value fonts, but IE7 and up as well as modern browsers are able to resize px value fonts.</p>
+                    </div>
+                </section>
+                <!-- ##### IMAGES ##### -->
+                <section id="images" class="section images">
+                    <div class="section_content">
+                        <h1>Images</h1>
+                        <ul>
+                            <li>Always include an alt description to images, for accessibility</li>
+                            <li>Repeating background images need to be larger than 1px x 1px</li>
+                            <li>Use <a href="http://www.alistapart.com/articles/sprites/">sprite images</a> where appropriate to reduce http requests</li>
+                            <li>Never use spacer images</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- ##### JAVASCRIPT ##### -->
+                <section id="javascript" class="section javascript">
+                    <div class="section_content">
+                        <h1>Javascript</h1>
+                    	<h2>Be consistent</h2>
+                    	<p>If you're editing code, take a few minutes to look at the code around you and determine its style. It would be pointless and very time consuming to reformat every pre-existing bit of code you come across. If they use spaces around all their arithmetic operators, you should too. The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it.</p>
 
-                        <!-- ##### FONTS ##### -->
-                        <section id="fonts">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>Fonts</h2>
-                                </div>
-                                <div class="span11">
-                                    <p>More often than not, a custom font (non web-safe font) is required on the site you’re building. Before implementing the custom font, carefully choose a font stack which includes web-safe fonts just in case the custom font doesn’t appear for the customer.</p>
-                                    <p>For applying custom fonts to the site, we recommend the use of @font-face which has a wide browser support including Internet Explorer since IE5. The advantages of @font-face is that the font is downloaded by the user without the requirement of flash, javascript or php to render the font. There is a differentiation in appearance between browsers, but this is due to the font rendering of different browsers/OS. Make use you have a properly licenced font before using tools such as <a href="http://www.fontsquirrel.com/fontface/generator">Font Squirel</a> to convert your fonts. Other systems which may be an alternative to @font-face inlcude:</p>
-                                    <ul>
-                                        <li><a href="https://typekit.com/">Typekit</a></li>
-                                        <li><a href="http://www.google.com/webfonts">Google Webfonts</a></li>
-                                        <li><a href="http://fontdeck.com/">fontdeck</a></li>
-                                    </ul>
-                                    <p>Other tried but not recommended font solutions include:</p>
-                                    <ul>
-                                        <li><a href="http://www.mikeindustries.com/blog/sifr">sIFR</a> - which was one of the original font replacement systems, uses Flash and Javascript to render customs fonts in the browser. With some devices not supporting Flash it won’t work, it renders on page load and text won’t appear until it loads.</li>
-                                        <li><a href="http://cufon.shoqolate.com/generate/">cufon</a> - a slightly better system as it uses JS to render fonts, but the text is unselectable and even on their website, they recommend that you use typekit</li>
-                                    </ul>
-                                    <h3>Font sizing</h3>
-                                    <p>We recommend using px values for font sizing, at the very least assigning the base font as a pixel value. This is to ensure control and consistency of font sizing across browsers. Ems were recommended due to IE6 not being able to resize px value fonts, but IE7 and up as well as modern browsers are able to resize px value fonts.</p>
-                                </div>
-                            </div>
-                        </section>
+                    	<h2>JS Lint</h2>
+                    	<p>Run your code through <a href="http://www.jslint.com">jslint</a>, it'll make it easier to spot errors and keep your code well formatted. It is ok to have some exceptions, as long as you can justify them.</p>
 
-                        <!-- ##### IMAGES ##### -->
-                        <section id="images">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>Images</h2>
-                                </div>
-                                <div class="span11">
-                                    <ul>
-                                        <li>Always include an alt description to images, for accessibility</li>
-                                        <li>Repeating background images need to be larger than 1px x 1px</li>
-                                        <li>Use <a href="http://www.alistapart.com/articles/sprites/">sprite images</a> where appropriate to reduce http requests</li>
-                                        <li>Never use spacer images</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- ##### JAVASCRIPT ##### -->
-                        <section id="javascript">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>Javascript</h2>
-                                </div>
-                                <div class="span11">
-                                	<h3>Be consistent</h3>
-                                	<p>If you're editing code, take a few minutes to look at the code around you and determine its style. It would be pointless and very time consuming to reformat every pre-existing bit of code you come across. If they use spaces around all their arithmetic operators, you should too. The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it.</p>
-
-                                	<h3>JS Lint</h3>
-                                	<p>Run your code through <a href="http://www.jslint.com">jslint</a>, it'll make it easier to spot errors and keep your code well formatted. It is ok to have some exceptions, as long as you can justify them.</p>
-
-									<h3>Var</h3>
-									<p>Declarations with <code class="prettyprint">var:</code> Always.</p>
-									<p>When you fail to specify <code class="prettyprint">var</code>, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives (e.g., it could be in the Document or Window just as easily as in the local scope).</p>
-									<h3>Spacing</h3>
-									<p>Keep everything tidy with a single space between entities, apart from before the <code class="prettyprint">()</code> in a function declaration and at either end of an object or array.</p>
-									<pre class="prettyprint">
+						<h2>Var</h2>
+						<p>Declarations with <code class="prettyprint code">var:</code> Always.</p>
+						<p>When you fail to specify <code class="prettyprint code">var</code>, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives (e.g., it could be in the Document or Window just as easily as in the local scope).</p>
+						<h2>Spacing</h2>
+						<p>Keep everything tidy with a single space between entities, apart from before the <code class="prettyprint code">()</code> in a function declaration and at either end of an object or array.</p>
+						<pre class="prettyprint code">
 var add = 1 + 2;
 var divString = '&lt;div&gt;' + add + '&lt;/div&gt;';
 var arr = [1, 2, 3];  // No space after [ or before ].
 var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
 
 function checkWorld() {
-  if (add === 3) {
+if (add === 3) {
     alert('the world makes sense');
-  } else {
-    alert(‘???’);
-  }
-}</pre>
-									<h3>Semicolons</h3>
-									<p>Always use semicolons. Relying on implicit insertion can cause subtle, hard to debug problems. Don't do it. You're better than that.</p>
-									<h3>Curly Braces</h3>
-									<p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening. For example:</p>
-									<pre class="prettyprint">
-if (something) {
-  // ...
 } else {
-  // ...
+    alert(‘???’);
+}
 }</pre>
-									<h3>Strings</h3>
-									<p>Prefer ' over "</p>
-									<p>For consistency single-quotes (<code class="prettyprint">'</code>) are preferred to double-quotes (<code class="prettyprint">"</code>). This is helpful when creating strings that include HTML:</p>
-									<pre class="prettyprint">var msg = 'This is some HTML';</pre>
-									<h3>Blank lines</h3>
-									<p>Use newlines to group logically related pieces of code. For example:</p>
-									<pre class="prettyprint">
+						<h2>Semicolons</h2>
+						<p>Always use semicolons. Relying on implicit insertion can cause subtle, hard to debug problems. Don't do it. You're better than that.</p>
+						<h2>Curly Braces</h2>
+						<p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening. For example:</p>
+						<pre class="prettyprint code">
+if (something) {
+// ...
+} else {
+// ...
+}</pre>
+						<h2>Strings</h2>
+						<p>Prefer ' over "</p>
+						<p>For consistency single-quotes (<code class="prettyprint code">'</code>) are preferred to double-quotes (<code class="prettyprint code">"</code>). This is helpful when creating strings that include HTML:</p>
+						<pre class="prettyprint code">var msg = 'This is some HTML';</pre>
+						<h2>Blank lines</h2>
+						<p>Use newlines to group logically related pieces of code. For example:</p>
+						<pre class="prettyprint code">
 doSomethingTo(x);
 doSomethingElseTo(x);
 andThen(x);
@@ -331,62 +290,62 @@ andThen(x);
 nowDoSomethingWith(y);
 
 andNowWith(z);</pre>
-									<h3>Array and Object literals</h3>
-									<p>Use Array and Object literals instead of Array and Object constructors. Array constructors are error-prone due to their arguments.</p>
-									<pre class="prettyprint">
+						<h2>Array and Object literals</h2>
+						<p>Use Array and Object literals instead of Array and Object constructors. Array constructors are error-prone due to their arguments.</p>
+						<pre class="prettyprint code">
 var a = new Array();
 var a = [];</pre>
-									<p>Object constructors don't have the same problems, but for readability and consistency object literals should be used.</p>
-									<pre class="prettyprint">
+						<p>Object constructors don't have the same problems, but for readability and consistency object literals should be used.</p>
+						<pre class="prettyprint code">
 var o = new Object();
 var o = {};</pre>
-									<h3>Naming Conventions</h3>
-									<p>In general, use functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis.</p>
-									<h3>Use namespaces for global code</h3>
-									<p>ALWAYS prefix identifiers in the global scope with a unique pseudo namespace related to the project or library. If you are working on "Project Sloth", a reasonable pseudo namespace would be sloth.*.</p>
-									<pre class="prettyprint">
+						<h2>Naming Conventions</h2>
+						<p>In general, use functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis.</p>
+						<h2>Use namespaces for global code</h2>
+						<p>ALWAYS prefix identifiers in the global scope with a unique pseudo namespace related to the project or library. If you are working on "Project Sloth", a reasonable pseudo namespace would be sloth.*.</p>
+						<pre class="prettyprint code">
 var sloth = {};
 
 sloth.sleep = function() {
-  ...
+    ...
 };</pre>
-									<h3>Parentheses</h3>
-									<p>Only where required. Use sparingly and in general only where required by the syntax and semantics.</p>
-									<p>Never use parentheses for unary operators such as delete, typeof and void or after keywords such as return, throw as well as others (case, in or new).</p>
-									<h3>Array and Object Initializers</h3>
-									<p>Single-line array and object initializers are allowed when they fit on a line:</p>
-									<pre class="prettyprint">
+						<h2>Parentheses</h2>
+						<p>Only where required. Use sparingly and in general only where required by the syntax and semantics.</p>
+						<p>Never use parentheses for unary operators such as delete, typeof and void or after keywords such as return, throw as well as others (case, in or new).</p>
+						<h2>Array and Object Initializers</h2>
+						<p>Single-line array and object initializers are allowed when they fit on a line:</p>
+						<pre class="prettyprint code">
 var arr = [1, 2, 3];  // No space after [ or before ].
 var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.</pre>
-									<p>Multiline array initializers and object initializers are indented 2 spaces, just like blocks.</p>
-									<pre class="prettyprint">
+						<p>Multiline array initializers and object initializers are indented 2 spaces, just like blocks.</p>
+						<pre class="prettyprint code">
 // Object initializer.
 var inset = {
-  top: 10,
-  right: 20,
-  bottom: 15,
-  left: 12
+    top: 10,
+    right: 20,
+    bottom: 15,
+    left: 12
 };</pre>
-									<h3>Cacheing</h3>
-									<p>Cache variables from higher up the scope chain. If you use a variable from a parent function, object or the global scope more than once cache it in a local variable.</p>
-									<h3>Browser reflow</h3>
-									<p>Avoid browser reflow where possible. It can have a big impact on performance.</p>
-									<p>Reduce unnecessary DOM depth. Changes at one level in the DOM tree can cause changes at every level of the tree - all the way up to the root, and all the the way down into the children of the modified node. This leads to more time being spent performing reflow.</p>
-									<p>If you make complex rendering changes such as animations, do so out of the flow. Use position-absolute or position-fixed to accomplish this.</p>
-									<p>Don't make multiple inserts for the same function, create an array and insert in one.</p>
-									<pre class="prettyprint">
+						<h2>Cacheing</h2>
+						<p>Cache variables from higher up the scope chain. If you use a variable from a parent function, object or the global scope more than once cache it in a local variable.</p>
+						<h2>Browser reflow</h2>
+						<p>Avoid browser reflow where possible. It can have a big impact on performance.</p>
+						<p>Reduce unnecessary DOM depth. Changes at one level in the DOM tree can cause changes at every level of the tree - all the way up to the root, and all the the way down into the children of the modified node. This leads to more time being spent performing reflow.</p>
+						<p>If you make complex rendering changes such as animations, do so out of the flow. Use position-absolute or position-fixed to accomplish this.</p>
+						<p>Don't make multiple inserts for the same function, create an array and insert in one.</p>
+						<pre class="prettyprint code">
 /* instead of this */
 var letters = ['a', 'b', 'c', 'd', 'e']
 for(i = 0; i&lt; letters.length; i++) {
-	$('ul#letters').append('&lt;li&gt;' + letters[i] + '&lt;/li&gt;');
+    $('ul#letters').append('&lt;li&gt;' + letters[i] + '&lt;/li&gt;');
 }
 
 /* do this */
 var letters = ['a', 'b', 'c', 'd', 'e'],
-	html = [];
+html = [];
 
 for(i = 0; i &lt; letters.length; i++) {
-	html[i] = '&lt;li&gt;' + letters[i] + '&lt;/li&gt;';
+    html[i] = '&lt;li&gt;' + letters[i] + '&lt;/li&gt;';
 }
 
 $('ul#letters').append(html.join(''));
@@ -397,95 +356,90 @@ $('ul#letters').append(html.join(''));
 */
 
 var letters = ['a', 'b', 'c', 'd', 'e'],
-    html = ['&lt;ul&gt;'];
+html = ['&lt;ul&gt;'];
 
 for(i = 0; i &lt; letters.length; i++) {
     html[i+1] = '&lt;li&gt;' + letters[i] + '&lt;/li&gt;';
 
     if(i === letters.length) {
-         html[i+1] = '&lt;/ul&gt;';
+        html[i+1] = '&lt;/ul&gt;';
     }
 }
 
 $('#letters').append(html.join(''));</pre>
-									<p>Avoid adding and removing elements unneccessarily.</p>
-									<pre class="prettyprint">
+						<p>Avoid adding and removing elements unneccessarily.</p>
+						<pre class="prettyprint code">
 /* instead of this */
 $('#nav').hover(function() {
-	$('#nav').append('&lt;div id="new-div" /&gt;');
+    $('#nav').append('&lt;div id="new-div" /&gt;');
 }, function() {
-	$('#new-div').remove();
+    $('#new-div').remove();
 });
 
 /* do this and hide #new-div with css */
 $('#nav').append('&lt;div id="new-div" /&gt;');
 $('#nav').hover(function() {
-	$('#new-div').show();
+    $('#new-div').show();
 }, function() {
-	$('#new-div').hide();
+    $('#new-div').hide();
 });</pre>
-									<h3>The for-in loop</h3>
-									<p>Only for iterating over keys in an object/map/hash.</p>
-									<p>for-in loops are often incorrectly used to loop over the elements in an Array. This is however very error prone because it does not loop from 0 to length - 1 but over all the present keys in the object and its prototype chain.</p>
-									<p>Always use normal for loops when using arrays.</p>
-									<pre class="prettyprint">
+						<h2>The for-in loop</h2>
+						<p>Only for iterating over keys in an object/map/hash.</p>
+						<p>for-in loops are often incorrectly used to loop over the elements in an Array. This is however very error prone because it does not loop from 0 to length - 1 but over all the present keys in the object and its prototype chain.</p>
+						<p>Always use normal for loops when using arrays.</p>
+						<pre class="prettyprint code">
 function printArray(arr) {
-  var l = arr.length;
-  for (var i = 0; i < l; i++) {
-    print(arr[i]);
-  }
+    var l = arr.length;
+    for (var i = 0; i < l; i++) {
+        print(arr[i]);
+    }
 }</pre>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- ##### jQuery ##### -->
-                        <section id="jquery">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>jQuery</h2>
-                                </div>
-                                <div class="span11">
-									<h3>Setup</h3>
-									<p>Use <code class="prettyprint">jQuery.noConflict();</code></p>
-									<p>Pass <code class="prettyprint">$</code> as a variable to avoid conflicts.</p>
-									<h3>DOM ready</h3>
-									<p>The following are identical in function.</p>
-									<pre class="prettyprint">
+                    </div>
+                </section>
+                <!-- ##### jQuery ##### -->
+                <section id="jquery" class="section jquery">
+                    <div class="section_content">
+                        <h1>jQuery</h1>
+						<h2>Setup</h2>
+						<p>Use <code class="prettyprint code">jQuery.noConflict();</code></p>
+						<p>Pass <code class="prettyprint code">$</code> as a variable to avoid conflicts.</p>
+						<h2>DOM ready</h2>
+						<p>The following are identical in function.</p>
+						<pre class="prettyprint code">
 jQuery(function() {});
 jQuery(document).ready(function() {});</pre>
-									<p>For snippets use the following:</p>
-									<pre class="prettyprint">
+						<p>For snippets use the following:</p>
+						<pre class="prettyprint code">
 jQuery(function($) {
-  //use dollar here
-  $(‘#selector’).text(‘$ not gonna conflict here’);
+//use dollar here
+$(‘#selector’).text(‘$ not gonna conflict here’);
 });</pre>
-									<h3>Plugins</h3>
-									<p>Use this for plugin wrapping etc.</p>
-									<pre class="prettyprint">
+						<h3>Plugins</h3>
+						<p>Use this for plugin wrapping etc.</p>
+						<pre class="prettyprint code">
 (function($) {
-  //pop it in a closure & use dollar
+    //pop it in a closure & use dollar
 })( jQuery );</pre>
-									<h3>Selectors</h3>
-									<p>Use #ids over .classes where possible.</p>
-									<p>Give it a context where appropriate <code class="prettyprint">$('.class', '#id')</code> or <code class="prettyprint">$(‘.class’, this)</code></p>
-									<h3>Use selectors over functions</h3>
-									<p>Selectors are generally quicker than functions, prefer them where appropriate.</p>
-									<pre class="prettyprint">
+						<h2>Selectors</h2>
+						<p>Use #ids over .classes where possible.</p>
+						<p>Give it a context where appropriate <code class="prettyprint code">$('.class', '#id')</code> or <code class="prettyprint code">$(‘.class’, this)</code></p>
+						<h2>Use selectors over functions</h2>
+						<p>Selectors are generally quicker than functions, prefer them where appropriate.</p>
+						<pre class="prettyprint code">
 /* quick */
 var d = $('div:not(#header)');
 /* less quick */
 var d = $('div').not('#header');</pre>
-									<h3>Iteration</h3>
-									<p>$.each() is neat but slow, for loops are much quicker.</p>
-									<p>Native functions are always faster than any helper counterparts. Plus .each() has an extra function callback for each iteration.</p>
-									<h3>Use cacheing</h3>
-									<p>Cache wherever possible.</p>
-									<pre class="prettyprint">
+						<h2>Iteration</h2>
+						<p>$.each() is neat but slow, for loops are much quicker.</p>
+						<p>Native functions are always faster than any helper counterparts. Plus .each() has an extra function callback for each iteration.</p>
+						<h2>Use cacheing</h2>
+						<p>Cache wherever possible.</p>
+						<pre class="prettyprint code">
 var $selector = $('selectors');</pre>
-									<p>Use <code class="prettyprint">$</code> to reference that it is a jQuery reference.</p>
-									<h3>Use chaining & reduce function calls</h3>
-									<pre class="prettyprint">
+						<p>Use <code class="prettyprint code">$</code> to reference that it is a jQuery reference.</p>
+						<h2>Use chaining & reduce function calls</h2>
+						<pre class="prettyprint code">
 /* don't do this */
 $('.div-class').addClass('fairly-slow');
 $('.div-class').attr('slow', 'fairly');
@@ -501,115 +455,106 @@ $('#div-three').addClass('add-me');
 
 /* do this */
 $('#div-one, #div-two, #div-three').addClass('add-me');</pre>
-									<h3>Use the data attribute</h3>
-									<p>Use .data() to store data needed in the DOM not 'rel' or 'alt'.</p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section id="accessibility">
-                            <div class="row">
-                                <div class="span5">
-                                    <h2>Accessibility</h2>
-                                </div>
-                                <div class="span11">
-                                    <h3>Web accessibility principles</h3>
-                                    <p>The four principles of web accessibility are set out in the <a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> are:</p>
-                                    <ul>
-                                        <li>Perceivable - Available through sight, hearing, or touch.</li>
-                                        <li>Operable - Compatible with keyboard or mouse.</li>
-                                        <li>Understandable - User-friendly, easy to comprehend.</li>
-                                        <li>Robust - Works across browsers, assistive technologies, mobile devices, old devices/browsers, etc. Follows standards.</li>
-                                    </ul>
-
-                                    <h3>Good practice guidelines</h3>
-                                    <p>The following are the basic guidelines that should be followed as a minimum when building sites, see the full <a href="http://www.w3.org/TR/WCAG20/">WCAG guidelines</a> for full details on requirements and different levels of compliance.</p>
-
-                                    <h4>General</h4>
-                                    <ul>
-                                        <li>properly structure content, appropriate use of headings, lists, tables etc</li>
-                                        <li>write valid HTML and CSS</li>
-                                    </ul>
-
-                                    <h4>Images</h4>
-                                    <ul>
-                                        <li>should have descriptive alt text</li>
-                                    </ul>
-
-                                    <h4>Text</h4>
-                                    <ul>
-                                        <li>should be resizable without breaking the site</li>
-                                        <li>avoid images of text, except for logos</li>
-                                        <li>avoid font replacement systems</li>
-                                    </ul>
-
-                                    <h4>Links</h4>
-                                    <ul>
-                                        <li>link text should be descriptive (not just 'click here')</li>
-                                        <li>ensure that users can tell when a link has focus by using the hover, active and focus pseudo-classes</li>
-                                    </ul>
-
-                                    <h4>Colour</h4>
-                                    <ul>
-                                        <li>make sure there's sufficient colour contrast between body text and the background</li>
-                                        <li>don't rely on colour alone to convey meaning</li>
-                                    </ul>
-
-                                    <h4>Keyboard accessibility</h4>
-                                    <ul>
-                                        <li>users should be able to navigate site using keyboard and access all core functionality (eg, submitting forms)</li>
-                                        <li>ensure there are no keyboard traps</li>
-                                        <li>provide skip links to allow keyboard users to skip over long lists of links, such as long navigation menus</li>
-                                    </ul>
-
-                                    <h4>Forms</h4>
-                                    <ul>
-                                        <li>input fields should have labels</li>
-                                        <li>ensure that forms can be completed and submitted using keyboard only</li>
-                                        <li>ensure that error messages are useful</li>
-                                        <li>avoid captchas</li>
-                                    </ul>
-
-                                    <h4>Audio / Video</h4>
-                                    <ul>
-                                        <li>user should be able to mute/pause</li>
-                                        <li>when audio / video is key content captions and alternative formats, eg. transcripts, should be provided</li>
-                                    </ul>
-
-                                    <h4>Javascript</h4>
-                                    <ul>
-                                        <li>ensure that JavaScript event handlers are device independent (e.g., they do not require the use of a mouse)</li>
-                                        <li>sites should not rely on JavaScript to function</li>
-                                    </ul>
-
-                                    <h3>Useful links</h3>
-                                    <ul>
-                                        <li><a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a></li>
-                                        <li><a href="http://www.w3.org/WAI/WCAG20/quickref/">How to meet WCAG 2.0</a></li>
-                                        <li><a href="http://coi.gov.uk/guidance.php?page=188">Central Office of Information (COI) Web standards and guidelines</a></li>
-                                        <li><a href="http://www.bbc.co.uk/accessibility/">BBC My Web My Way</a></li>
-                                        <li><a href="http://webaim.org/">WebAim</a></li>
-                                        <li><a href="http://wave.webaim.org/">WAVE web accessibility evaluation tool</a></li>
-                                        <li><a href="http://snook.ca/technical/colour_contrast/colour.html">Colour contrast checker</a></li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </section>
-
-
+						<h2>Use the data attribute</h2>
+						<p>Use .data() to store data needed in the DOM not 'rel' or 'alt'.</p>
                     </div>
-                    <div class="span5">&nbsp;</div>
-                </div>
-                <footer>
-                    <p>Created by: <a href="mailto:edward@sessiondigital.com">Edward Chen</a>, <a href="mailto:dadams@sessiondigital.com">David Adams</a> and <a href="mailto:amy@sessiondigital.com">Amy Benson</a></p>
-                    <p>The following resources provided the base upon which this guide was formed:</p>
-                    <ul>
-                        <li><a href="http://taitems.github.com/Front-End-Development-Guidelines/">Tait Brown's Frontend Development Guidelines</a></li>
-                        <li><a href="http://na.isobar.com/standards/">isobar Front-end Code Standards &amp; Best Practices</a></li>
-                        <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
-                    </ul>
-                </footer>
+                </section>
+                <!-- ##### Accessibility ##### -->
+                <section id="accessibility" class="section accessibility">
+                    <div class="section_content">
+                        <h1>Accessibility</h1>
+                        <h2>Web accessibility principles</h2>
+                        <p>The four principles of web accessibility are set out in the <a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> are:</p>
+                        <ul>
+                            <li>Perceivable - Available through sight, hearing, or touch.</li>
+                            <li>Operable - Compatible with keyboard or mouse.</li>
+                            <li>Understandable - User-friendly, easy to comprehend.</li>
+                            <li>Robust - Works across browsers, assistive technologies, mobile devices, old devices/browsers, etc. Follows standards.</li>
+                        </ul>
+
+                        <h2>Good practice guidelines</h2>
+                        <p>The following are the basic guidelines that should be followed as a minimum when building sites, see the full <a href="http://www.w3.org/TR/WCAG20/">WCAG guidelines</a> for full details on requirements and different levels of compliance.</p>
+
+                        <h3>General</h3>
+                        <ul>
+                            <li>properly structure content, appropriate use of headings, lists, tables etc</li>
+                            <li>write valid HTML and CSS</li>
+                        </ul>
+
+                        <h3>Images</h3>
+                        <ul>
+                            <li>should have descriptive alt text</li>
+                        </ul>
+
+                        <h3>Text</h3>
+                        <ul>
+                            <li>should be resizable without breaking the site</li>
+                            <li>avoid images of text, except for logos</li>
+                            <li>avoid font replacement systems</li>
+                        </ul>
+
+                        <h3>Links</h3>
+                        <ul>
+                            <li>link text should be descriptive (not just 'click here')</li>
+                            <li>ensure that users can tell when a link has focus by using the hover, active and focus pseudo-classes</li>
+                        </ul>
+
+                        <h3>Colour</h3>
+                        <ul>
+                            <li>make sure there's sufficient colour contrast between body text and the background</li>
+                            <li>don't rely on colour alone to convey meaning</li>
+                        </ul>
+
+                        <h3>Keyboard accessibility</h3>
+                        <ul>
+                            <li>users should be able to navigate site using keyboard and access all core functionality (eg, submitting forms)</li>
+                            <li>ensure there are no keyboard traps</li>
+                            <li>provide skip links to allow keyboard users to skip over long lists of links, such as long navigation menus</li>
+                        </ul>
+
+                        <h3>Forms</h3>
+                        <ul>
+                            <li>input fields should have labels</li>
+                            <li>ensure that forms can be completed and submitted using keyboard only</li>
+                            <li>ensure that error messages are useful</li>
+                            <li>avoid captchas</li>
+                        </ul>
+
+                        <h3>Audio / Video</h3>
+                        <ul>
+                            <li>user should be able to mute/pause</li>
+                            <li>when audio / video is key content captions and alternative formats, eg. transcripts, should be provided</li>
+                        </ul>
+
+                        <h3>Javascript</h3>
+                        <ul>
+                            <li>ensure that JavaScript event handlers are device independent (e.g., they do not require the use of a mouse)</li>
+                            <li>sites should not rely on JavaScript to function</li>
+                        </ul>
+
+                        <h2>Useful links</h2>
+                        <ul>
+                            <li><a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a></li>
+                            <li><a href="http://www.w3.org/WAI/WCAG20/quickref/">How to meet WCAG 2.0</a></li>
+                            <li><a href="http://coi.gov.uk/guidance.php?page=188">Central Office of Information (COI) Web standards and guidelines</a></li>
+                            <li><a href="http://www.bbc.co.uk/accessibility/">BBC My Web My Way</a></li>
+                            <li><a href="http://webaim.org/">WebAim</a></li>
+                            <li><a href="http://wave.webaim.org/">WAVE web accessibility evaluation tool</a></li>
+                            <li><a href="http://snook.ca/technical/colour_contrast/colour.html">Colour contrast checker</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="section_content">
+                        <p>Created by: <a href="mailto:edward@sessiondigital.com">Edward Chen</a>, <a href="mailto:dadams@sessiondigital.com">David Adams</a> and <a href="mailto:amy@sessiondigital.com">Amy Benson</a></p>
+                        <p>The following resources provided the base upon which this guide was formed:</p>
+                        <ul>
+                            <li><a href="http://taitems.github.com/Front-End-Development-Guidelines/">Tait Brown's Frontend Development Guidelines</a></li>
+                            <li><a href="http://na.isobar.com/standards/">isobar Front-end Code Standards &amp; Best Practices</a></li>
+                            <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
     </body>
