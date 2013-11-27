@@ -206,7 +206,7 @@
 //Example
 &lt;action method="addJs"&gt;&lt;script&gt;script/scripts.js&lt;/script&gt;&lt;/action&gt;
 </pre>
-                        <p class="code_comment">if you need to add a js file from the core js folder, you can use the code below changing the value within <code>&lt;script&gt;</code> and placing the <code>&lt;action method="addJs"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
+                        <p class="code_comment">if you need to add a js file from the core js folder, you can use the code above changing the value within <code>&lt;script&gt;</code> and placing the <code>&lt;action method="addJs"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
                         
                         <h2>Removing skin js files through XML layouts</h2>
 <pre class="prettyprint code">
@@ -217,7 +217,18 @@
     &lt;/action&gt;
 &lt;/reference&gt;
 </pre>
-                        <p class="code_comment">If you need to remove a javascript file from only certain pages, use the following code changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
+                        <p class="code_comment">If you need to remove a javascript file from only certain pages, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
+                        
+                        <h2>Removing care js files through XML layouts</h2>
+<pre class="prettyprint code">
+//Example
+&lt;reference name="head"&gt;
+    &lt;action method="removeItem"&gt;
+         &lt;type&gt;js&lt;/type&gt;&lt;name&gt;scripts.js&lt;/name&gt;
+    &lt;/action&gt;
+&lt;/reference&gt;
+</pre>
+                        <p class="code_comment">If you need to remove a javascript file from the core js folder, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
                         
                         <h2>Changing the page layout</h2>
 <pre class="prettyprint code">
