@@ -198,7 +198,7 @@
 </pre>
                         <p class="code_comment">If you need to remove a stylesheet from an existing base layout xml file, use the code above changing the <code>&lt;name&gt;</code> value and placing the code within the <code>&lt;reference name="head"&gt;</code> section of your local.xml file</p>
                         
-                        <h2>Adding skin js files through layout XML</h2>
+                        <h2>Adding js files from the skin js folder through layout XML</h2>
 <pre class="prettyprint code">
 //Example
 &lt;action method="addItem"&gt;
@@ -207,34 +207,60 @@
 </pre>
                         <p class="code_comment">If you need to add a new javascript file from the js folder located in the theme, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> of your local.xml.</p>
                         
-                        <h2>Removing skin js files through XML layouts</h2>
+                        <h2>Removing js files from the skin js folder through XML layouts</h2>
 <pre class="prettyprint code">
 //Example
-&lt;reference name="head"&gt;
-    &lt;action method="removeItem"&gt;
-         &lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
-    &lt;/action&gt;
-&lt;/reference&gt;
+&lt;action method="removeItem"&gt;
+     &lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/scripts.js&lt;/name&gt;
+&lt;/action&gt;
 </pre>
-                        <p class="code_comment">If you need to remove a javascript file from only certain pages, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
+                        <p class="code_comment">If you need to remove a javascript file located in your themes skin js folder or a fallback theme skin js folder, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> of your local.xml.</p>
                         
-                        <h2>Adding js files from the core js folder</h2>
+                        <h2>Adding js files from the core js folder through layout xml</h2>
 <pre class="prettyprint code">
 //Example
 &lt;action method="addJs"&gt;&lt;script&gt;script/scripts.js&lt;/script&gt;&lt;/action&gt;
 </pre>
-                        <p class="code_comment">if you need to add a js file from the core js folder, you can use the code above changing the value within <code>&lt;script&gt;</code> and placing the <code>&lt;action method="addJs"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> or <code>&lt;block type="page/html_head" name="head" as="head"&gt;</code> in the page.xml.</p>
+                        <p class="code_comment">If you need to add a js file from the core js folder, you can use the code above changing the value within <code>&lt;script&gt;</code> and placing the <code>&lt;action method="addJs"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> of your local.xml.</p>
                         
-                        <h2>Removing core js files through XML layouts</h2>
+                        <h2>Removing js files from the core js folder through layout XML</h2>
 <pre class="prettyprint code">
 //Example
-&lt;reference name="head"&gt;
-    &lt;action method="removeItem"&gt;
-         &lt;type&gt;js&lt;/type&gt;&lt;name&gt;scripts.js&lt;/name&gt;
+&lt;action method="removeItem"&gt;
+     &lt;type&gt;js&lt;/type&gt;&lt;name&gt;scripts.js&lt;/name&gt;
+&lt;/action&gt;
+</pre>
+                        <p class="code_comment">If you need to remove a javascript file from the core js folder, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code> of your local.xml.</p>
+                        
+                        <h2>Removing structural or content blocks through layout xml</h2>
+<pre class="prettyprint code">
+//Example
+&lt;remove name="welcome" /&gt;
+</pre>
+                        <p class="code_comment">If you need to remove a content or structural block from displaying on the frontend, use the above code within the appropriate <code>&lt;reference&gt;</code> and replacing the <code>&lt;name&gt;</code> value with the name of the block, not the alias. The name is an attribute of the block where it originally is declared.</p>
+                        
+                        <h2>Moving a content block to another structural block on a page</h2>
+<pre class="prettyprint code">
+//original code in newsletter.xml
+&lt;reference name="left"&gt;
+    &lt;block type="newsletter/subscribe" name="left.newsletter" template="newsletter/subscribe.phtml"/&gt;
+&lt;/reference&gt;
+
+//code removing the newsletter block from the left structural block
+&lt;reference name="left"&gt;
+    &lt;action method="unsetChild"&gt;
+        &lt;name&gt;left.newsletter&lt;/name&gt;
+    &lt;/action&gt;
+&lt;/reference&gt;
+
+//adding the newsletter block to the footer
+&lt;reference name="footer"&gt;
+    &lt;action method="insert"&gt;
+        &lt;block&gt;left.newsletter&lt;/block&gt;
     &lt;/action&gt;
 &lt;/reference&gt;
 </pre>
-                        <p class="code_comment">If you need to remove a javascript file from the core js folder, use the code above changing the <code>&lt;name&gt;</code> value and placing the <code>&lt;action method="addItem"&gt;</code> within the <code>&lt;reference name="head"&gt;</code>.</p>
+                        <p class="code_comment">In the above code, there are three pieces of layout xml which illustrates how to move the newsletter block from its default position in the left structural block to the footer using the unsetChild and insert method. The first piece of code is the original newsletter block in the newsletter.xml file. The next two pieces of code involve removing and inserting the newsletter block and should reside in your local.xml. If the original content block has an <code>alias</code> attribute, you can use that instead of <code>&lt;name&gt;</code></p>
                         
                         <h2>Changing the page layout</h2>
 <pre class="prettyprint code">
@@ -243,7 +269,7 @@
     &lt;action method="setTemplate"&gt;&lt;template>page/2columns-left.phtml&lt;/template&gt;&lt;/action&gt;
 &lt;/reference&gt;
 </pre>
-                        <p class="code_comment">By default Magento comes with five different page layouts, one column, two column left, two column right, three column and empty. The code below shows an example of setting the page template to the two column left layout.</p>
+                        <p class="code_comment">By default Magento comes with five different page layouts, one column, two column left, two column right, three column and empty. The code above shows an example of setting the page template to the two column left layout.</p>
                         
                         <h2>Adding a class to the &lt;body&gt;</h2>
 <pre class="prettyprint code">
